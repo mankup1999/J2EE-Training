@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Online Auction</title>
+<style type="text/css">
+.errorMsg {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		function validateInputs() {
+
+			var itemId = document.getElementById("itemId").value;
+			var itemName = document.getElementById("itemName").value;
+			var yourName = document.getElementById("yourName").value;
+			var emailId = document.getElementById("emailId").value;
+			var amountBid = document.getElementById("amountBid").value;
+
+			var flag = true;
+
+			if (itemId.length == 0) {
+				document.getElementById("noItemId").innerHTML = "Required field!";
+				flag = false;
+			}
+			if (itemName.length == 0) {
+				document.getElementById("noItemName").innerHTML = "Required field!";
+				flag = false;
+			}
+			if (yourName.length == 0) {
+				document.getElementById("noYourName").innerHTML = "Required field!";
+				flag = false;
+			}
+			if (emailId.length == 0) {
+				document.getElementById("noEmailId").innerHTML = "Required field!";
+				flag = false;
+			}
+			if (amountBid.length == 0) {
+				document.getElementById("noAmountBid").innerHTML = "Required field!";
+				flag = false;
+			}
+
+			if (flag == false) {
+				document.getElementById("span1").innerHTML = "Required Data Missing!";
+				document.getElementById("span2").innerHTML = "Enter and Resubmit.";
+			}
+
+			return flag;
+		}
+	</script>
+
+	<center>
+
+		<h1>Welocme to AP Auctions. Please Enter Bid.</h1>
+		<h2>
+			<span class="errorMsg" id="span1"></span><span id=span2></span>
+		</h2>
+
+		<form action="processBid" method="post" onsubmit="return validateInputs()">
+			<table>
+				<tr>
+					<td><span class="errorMsg" id="noItemId"></span></td>
+					<td>Item ID:</td>
+					<td><input type="number" name="itemId" id="itemId"></td>
+				</tr>
+				<tr>
+					<td><span class="errorMsg" id="noItemName"></span></td>
+					<td>Item Name:</td>
+					<td><input name="itemName" id="itemName"></td>
+				</tr>
+				<tr>
+					<td><span class="errorMsg" id="noYourName"></span></td>
+					<td>Your Name:</td>
+					<td><input name="yourName" id="yourName"></td>
+				</tr>
+				<tr>
+					<td><span class="errorMsg" id="noEmailId"></span></td>
+					<td>Your Email Address:</td>
+					<td><input type="email" name="emailId" id="emailId"></td>
+				</tr>
+				<tr>
+					<td><span class="errorMsg" id="noAmountBid"></span></td>
+					<td>Amount Bid:</td>
+					<td><input type="number" name="amountBid" id="amountBid"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="2">Auto-increment bid to match other bidders?: <input
+						type="checkbox" name="autoInc" id="autoInc"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="2"><input type="submit" value="Submit Bid"></td>
+				</tr>
+			</table>
+		</form>
+
+	</center>
+</body>
+</html>

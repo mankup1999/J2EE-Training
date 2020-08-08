@@ -1,0 +1,72 @@
+<!--
+	
+ Write validation functions and modify the onSubmit event Handler 
+ in the form code to validate the following form fields:
+1. Phone Number
+• Must be entered
+• Must be in below format
+           XXX-XXX-XXXX
+           XXX.XXX.XXXX
+           XXX XXX XXXX
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Demo2</title>
+<script type="text/javascript">
+	function validate() {
+		var x = document.Form.phoneNo.value;
+		if (x.length == 0) {
+			alert("Phone no must be entered");
+			return false;
+		}
+		x.trim();
+		if(x.length!=12){
+			alert("Wrong Format");
+			return false;
+		}
+		if(x.indexOf('-')!=-1){
+			var y=x.split('-');
+			if(y.length!=3){
+				alert("Wrong Format");
+				return false;	
+			}
+			if(y[0].length==3 && y[1].length==3 && y[2].length==4){
+				return true;
+			}
+			alert("Wrong Format");
+			return false;
+		}
+		if(x.indexOf('.')!=-1){
+			var y=x.split('.');
+			if(y.length!=3){
+				alert("Wrong Format");
+				return false;	
+			}
+			if(y[0].length==3 && y[1].length==3 && y[2].length==4){
+				return true;
+			}
+			alert("Wrong Format");
+			return false;
+		}
+		var y=x.split(' ');
+		if(y.length!=3){
+			alert("Wrong Format");
+			return false;	
+		}
+		if(y[0].length==3 && y[1].length==3 && y[2].length==4){
+			return true;
+		}
+		alert("Wrong Format");
+		return false;
+	}
+</script>
+</head>
+<body>
+	<form name="Form" action="" onsubmit="return validate()">
+		<input type="text" name="phoneNo" autofocus="autofocus"><br><br>
+		  <input type="submit">
+	</form>
+</body>
+</html>

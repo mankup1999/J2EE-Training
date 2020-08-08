@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Login Form</title>
+</head>
+<body>
+		<form action="loginValidation" style="margin-left:35%;margin-top:2%;">
+			<table>
+				<caption><b>Login Page</b></caption>
+				<tr>
+					<td>Enter User Name:</td>
+					<td><input type="text" name="username" /></td>
+				</tr>
+				<tr>
+					<td>Enter Pass Word:</td>
+					<td><input id="pswd" type="password" name="password" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="submit" onclick="return validate()" /></td>
+				</tr>
+			</table>
+		</form>
+		<div style="text-align:center;"> <a href="Registration.html">New User</a></div>
+	<script type="text/javascript">
+		function validate(){
+			var x=document.getElementById("pswd").value;
+			if(x==null || x.length==0){
+				alert("Password can't be empty");
+				return false;
+			}
+			if(x.length<6){
+				alert("Password shoudn't be less than 6 charaters");
+				return false;
+			}
+			var isDig=false;
+			var isUpperCase=false;
+			for(var i=0;i<x.length;i++){
+				if(x.charAt(i)>='0' && x.charAt(i)<='9')
+					isDig=true;
+				else if(x.charAt(i)>='A' && x.charAt(i)<='Z')
+					isUpperCase=true;
+			}
+			if(isDig==false){
+				alert("Password should have atleast one number");
+				return false;
+			}
+			if(isUpperCase==false){
+				alert("Password should have atleast one UpperCase Letter");
+				return false;
+			}
+			return true;
+		}
+	</script>
+</body>
+</html>

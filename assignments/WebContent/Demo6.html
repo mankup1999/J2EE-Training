@@ -1,0 +1,33 @@
+<!--
+ Create a HTML page with 4 hyperlinks named white, red, blue and pink.
+The background colour of the HTML page will change based on the link which is clicked.
+Write a javascript function to implement it.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Demo6</title>
+</head>
+<body>
+	<a name="white" onclick="white()" href="#">link1</a>
+	<a name="red" onclick="red()" href="#">link2</a>
+	<a name="blue" onclick="blue()" href="#">link3</a>
+	<a name="pink" onclick="pink()" href="#">link4</a>
+
+	<script type="text/javascript">
+		function white() {
+			document.body.style.backgroundColor = "white";
+		}
+		function red() {
+			document.body.style.backgroundColor = "red";
+		}
+		function blue() {
+			document.body.style.backgroundColor = "blue";
+		}
+		function pink() {
+			document.body.style.backgroundColor = "pink";
+		}
+	</script>
+</body>
+</html>

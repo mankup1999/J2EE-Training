@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registration Form</title>
+</head>
+<script type="text/javascript">
+	function validateUserId() {
+		var x = document.getElementById("userId").value;
+		if (x == null || x.length < 4) {
+			alert("UserId should contain min of 4 characters");
+			return false;
+		}
+		if (x.length > 8) {
+			alert("UserId should contain max of 8 characters");
+			return false;
+		}
+		return true;
+	}
+	function validatePassword() {
+		var x = document.getElementById("password").value;
+		if (x == null || x.length == 0) {
+			alert("Password can't be empty");
+			return false;
+		}
+		if (x.length < 6) {
+			alert("Password can't be less than 6 charcaters");
+			return false;
+		}
+		var flag1 = false;
+		var flag2 = false;
+		for (var i = 0; i < x.length; i++) {
+			var ch = x.charAt(i);
+			if (ch >= 'A' && ch <= 'Z')
+				flag1 = true;
+			if (ch >= '1' && ch <= '9')
+				flag2 = true;
+		}
+		if (flag1 == false) {
+			alert("Password should contain at least one upper case letter");
+			return false;
+		}
+		if (flag2 == false) {
+			alert("Password should contain at least one number");
+			return false;
+		}
+		return true;
+	}
+	function validateDate() {
+		var x = document.getElementById("date").value;
+		var today = new Date();
+		var year = String(today.getFullYear());
+		var month = String(today.getMonth()).padStart(2, '0');
+		var day = String(today.getDate()).padStart(2, '0');
+		var date = year + '-' + month + '-' + day;
+		if (x >= date) {
+			alert("selected date must be less than todays date");
+			return false;
+		}
+		return true;
+	}
+	function validateContact(){
+		var x=document.getElementById("contact").value;
+		if(x.length!=10){
+			alert("Contact number should be exactly of 10 digits");
+			return false;
+		}
+		return true;
+	}
+	
+	function validate(){
+		return validateUserId() && validatePassword() && validateDate() && validateContact();
+	}
+</script>
+<body style="margin-left:40%;margin-top:5%;">
+	<form action="createUser">
+		<table>
+			<caption style="margin-bottom:3%;"><b>Registration Form</b></caption>
+			<tr>
+				<td>User Id:</td>
+				<td><input type="text" name="userId" id="userId"></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="text" name="password" id="password"></td>
+			</tr>
+			<tr>
+				<td>Date Of Birth:</td>
+				<td><input type="date" name="date" id="date"></td>
+			</tr>
+			<tr>
+				<td>Gender:</td>
+				<td><input type="radio" name="gender" value="M">Male<input
+					type="radio" name="gender" value="F">Female</td>
+			</tr>
+			<tr>
+				<td>State:</td>
+				<td><select name="state">
+					<option value="Bihar">Bihar</option>
+					<option value="Maharashtra">Maharashtra</option>
+					<option value="Kerala">Kerala</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Contact number:</td>
+				<td><input type="number" name="contact" id="contact"></td>
+			</tr>
+			<tr>
+				<td>Address:</td>
+				<td>
+					<textarea name="address"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" onclick="return validate()"></td>
+				<td><input type="reset"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

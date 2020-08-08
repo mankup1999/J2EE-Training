@@ -1,0 +1,28 @@
+<!--
+ Create program to display current time in a textbox
+ (HH:MM:SS) such that the value in the time textbox is dynamic (Time should get updated every second) and not static.
+[Hint: Use setTimeOut function] 
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Demo9</title>
+<script type="text/javascript"> 
+	function display_c(){
+		var refresh=1000; 
+		mytime=setTimeout('display_ct()',refresh)
+	}
+	
+	function display_ct() {
+		var x = new Date();
+		document.getElementById('ct').value = x.toLocaleTimeString();;
+		display_c();
+	 }
+</script>
+</head>
+
+<body onload=display_ct();>
+	<input id='ct'>
+
+</body>
+</html>

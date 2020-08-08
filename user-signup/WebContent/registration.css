@@ -1,0 +1,23 @@
+#body {
+	background-color: purple;
+}
+
+#form {
+	background-color: gray;
+}
+
+#div1 {
+	float: right;
+	font-size: 30px;
+}
+
+#div2 {
+	float: left;
+	margin-left: 40%;
+	margin-right: 30%;
+	margin-top: 5%;
+}
+
+#form {
+	padding: 10px 10px 10px 10px;
+}

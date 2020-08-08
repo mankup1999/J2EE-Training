@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registration Page</title>
+<link rel="stylesheet" type="text/css" href="registration.css">
+<script type="text/javascript" src="registration.js"></script>
+</head>
+<body id="body" onload="showDate()">
+
+	<div id="div1">
+	</div>
+	
+	<div id="div2">
+			<form id="form" action="#" method="post" onsubmit="return validate()">
+		
+				<br> First Name : <input id="firstName" onclick="inputChange(this)" required="required"><br>
+				
+				<br> Last Name : <input id="lastName" onclick="inputChange(this)" required="required"><br>
+				
+				<br> Password : <input id="password" type="password" onclick="inputChange(this)" required="required"><br>
+				
+				<br> Confirm Password : <input type="password" id="confirmPassword" onclick="inputChange(this)" required="required"><br>
+				
+				<br> Gender : <input type="radio" name="gender" value="M" required="required">Male<input type="radio" name="gender" value="F" required="required">Female<br>
+				
+				<br> Mobile : <input id="mobileNo"
+				onclick="inputChange(this)" required="required"><br>
+				
+				<br> DOB : <input type="date" onclick="inputChange(this)" required="required"><br>
+				
+				<br> Email Address: <input type="email" onclick="inputChange(this)" required="required"><br>
+				
+				<br> <input onmouseover="submitFocus(this)" onmouseout="submitNoFocus(this)" type="submit" value="register">
+		
+			</form>
+	</div>
+</body>
+</html>

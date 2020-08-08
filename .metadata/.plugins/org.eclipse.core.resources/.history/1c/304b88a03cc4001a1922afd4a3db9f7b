@@ -1,0 +1,20 @@
+package src.com.javafundamentals;
+
+public class Demo12 {
+
+	public static void main(String[] args) {
+		
+		int[] a1= {1,2,3};
+		int[] a2= {2,3,4};
+		
+		System.out.println(middleWay(a1, a2));
+
+	}
+
+	public static int[] middleWay(int[] a1,int[] a2) {
+		int[] arr=new int[2];
+		arr[0]=a1[1];
+		arr[1]=a2[1];
+		return arr;
+	}
+}
